@@ -1,4 +1,4 @@
-import { WarpFactory } from "warp-contracts";
+import { WarpFactory } from "warp-contracts"
 import fs from 'fs'
 
 const envirornment = process.env.WARPENV || 'testnet'

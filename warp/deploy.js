@@ -1,5 +1,5 @@
+import { configureWallet, warp } from './configureWarpServer.js'
 import fs from 'fs'
-import { configureWallet, warp } from './configureWarpServer'
 
 async function deploy() {
     const wallet = await configureWallet()
@@ -12,8 +12,8 @@ async function deploy() {
         src: contractsource,
     })
 
-    fs.writeSync('../transactionid.js', `export const transactionId = "${contractTxId}"`)
-    const contract = wrap.contract(contractTxId).connect(wallet)
+    fs.writeFileSync('../transactionid.js', `export const transactionId = "${contractTxId}"`)
+    const contract = warp.contract(contractTxId).connect(wallet)
 
     // initialize function to write our first interaction to the contract 
     await contract.writeInteraction({
