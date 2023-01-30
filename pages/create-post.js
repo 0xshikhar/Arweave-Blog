@@ -4,7 +4,7 @@ import { v4 as uuid } from 'uuid'
 import { useRouter } from "next/router";
 
 export default function CreatePostComponent() {
-    const [post, setPost] = useState({ title: '', content: '' })
+    const [post, updatePost] = useState({ title: '', content: '' })
 
     const router = useRouter() // redireting the pafe to index after writing the article
 
@@ -65,6 +65,11 @@ const inputStyle = {
 }
 
 const textAreaStyle ={
+    width: '100px',
+    margin: '0 auto',
+}
+
+const buttonStyle ={
     width: '100px',
     margin: '0 auto',
 }
